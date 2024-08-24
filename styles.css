@@ -1,0 +1,135 @@
+/* Existing Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e9ecef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+h1 {
+    margin: 0 0 20px;
+    font-size: 24px;
+    text-align: center;
+    color: #343a40;
+}
+
+.input-group {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#taskInput {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 16px;
+    color: #495057;
+}
+
+#addTaskBtn {
+    padding: 10px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 3px;
+    margin-left: 5px;
+}
+
+.filter-group {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    border: none;
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background-color: #f8f9fa;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0; /* Start with hidden items for fade-in */
+    transform: translateY(-10px);
+    animation: fadeIn 0.5s forwards;
+    color: #495057;
+}
+
+li.completed {
+    background-color: #d4edda;
+    text-decoration: line-through;
+    color: #6c757d;
+    transition: color 0.3s ease, text-decoration 0.3s ease, background-color 0.3s ease;
+}
+
+li.pending {
+    background-color: #fff3cd;
+    color: #856404;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+li .actions button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 14px;
+}
+
+li .actions button.delete {
+    color: red;
+}
+
+li .actions button.edit {
+    color: orange;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideOut {
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+@keyframes strikeThrough {
+    to {
+        color: gray;
+        text-decoration: line-through;
+    }
+}
